@@ -16,3 +16,37 @@ mixin InputRadio(name, label)
 mixin BtnMenu()
     button.btn__menu
         span
+
+mixin Navbar()
+    header
+        .navbar
+            .container
+                a(href="/").logo
+                    img(src="assets/images/logo.png", alt="") 
+                .contacts__wrapper
+                    .contacts.address
+                        span г. Архангельск, <br> ул. Воскресенская, д. 114
+                    .contacts.phone 
+                        a(href="") +7 (123) 456-78-90
+                    .contacts.mail
+                        a(href="") mail@mail.ru 
+        .menu__wrapper
+            .container
+                ul.menu
+                    li 
+                        a(href="") О магазине 
+                    li 
+                        a(href="") Каталог
+                    li 
+                        a(href="") Магазины
+                    li 
+                        a(href="") Новости
+                    li 
+                        a(href="") Акции
+                    li 
+                        a(href="") Контакты
+                .search__form
+                    form(action="")
+                        .search__input
+                            input(type="text" placeholder="Я хочу купить...")
+                            button 

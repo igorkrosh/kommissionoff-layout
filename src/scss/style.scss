@@ -3,6 +3,7 @@ body
     margin: 0;
     color: #000;
     background: #fff;
+    font-family: "OpenSans";
 }
 
 body.lock
@@ -31,6 +32,144 @@ button, a
 {
     cursor: pointer;
 }
+
+header
+{
+    .navbar
+    {
+        background-color: #fff;
+        padding: 25px 0;
+    
+        .container 
+        {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    .menu__wrapper
+    {
+        background: rgb(86,12,198);
+        background: linear-gradient(90deg, rgba(86,12,198,1) 0%, rgba(138,61,253,1) 100%);
+        color: #fff;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        .container
+        {
+            display: flex;
+            justify-content: space-between;
+
+            .menu
+            {
+                display: flex;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+
+                li
+                {
+                    display: flex;
+                    align-items: center;
+                }
+
+                a
+                {
+                    display: block;
+                    margin-right: 35px;
+                }
+            }
+
+            .search__form
+            {
+                display: flex;
+
+                .search__input
+                {
+                    height: 35px;
+                    width: 285px;
+                    position: relative;
+
+                    input
+                    {
+                        font-size: 16px;
+                        font-family: 'OpenSans';
+                        width: 100%;
+                        height: 100%;
+                        padding-right: 35px;
+                        padding-left: 10px;
+                    }
+
+                    button
+                    {
+                        position: absolute;
+                        height: 100%;
+                        width: 35px;
+                        top: 0;
+                        right: 0;
+                        background: url(../images/icons/search.png);
+                        background-position: center;
+                        background-size:auto;
+                        background-repeat: no-repeat;
+                        border: none;
+                    }   
+                }
+            }
+        }
+    }
+}
+
+.contacts__wrapper
+{
+    display: flex;
+    align-items: center;
+
+    .contacts
+    {
+        margin-left: 45px;
+        font-size: 16px;
+        position: relative;
+        padding-left: 35px;
+    }
+
+    .contacts.phone
+    {
+        font-size: 18px;
+    }
+
+    .contacts::after
+    {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+    }
+
+    .contacts.address::after
+    {
+        width: 15px;
+        height: 24px;
+        background: url(../images/icons/address.png);
+    }
+
+    .contacts.phone::after
+    {
+        width: 13px;
+        height: 23px;
+        background: url(../images/icons/phone.png);
+    }
+
+    .contacts.mail::after
+    {
+        width: 18px;
+        height: 14px;
+        background: url(../images/icons/mail.png)
+    }
+}    
+
+
 
 
 @import 'responce';
