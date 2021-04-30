@@ -14,6 +14,17 @@ function InitOwl()
         navContainer: $('section.main .slider__wrapper .owl__nav'),
         nav: true,
         dots: false,
+        autoplay: true,
+        loop: true,
+    });
+
+    $('section.products__list .owl-carousel').owlCarousel({
+        items: 4,
+        navContainer: $('section.products__list .owl__nav'),
+        nav: true,
+        dots: false,
+        autoplay: true,
+        loop: true,
     })
 }
 

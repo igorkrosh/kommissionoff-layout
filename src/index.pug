@@ -1,5 +1,17 @@
 include pug/mixins.pug
 
+mixin ProductItem(img, type, brand, price, size)
+    a(href="").slider__item
+        .preview
+            img(src=img, alt="")
+        .desc
+            .type=type
+            .brand=brand
+            .price=price
+                | р.
+            .size Размер: 
+                =size
+
 doctype html
 html(lang="ru")
     head
@@ -35,6 +47,16 @@ html(lang="ru")
             .container
                 .border__orange
                     p Если Вы хотите продать дорогую вещь, но не хотите созваниваться с незнакомыми людьми и если Вы не хотите чтобы незнакомые люди ходили в Ваш дом Мы готовы принять Вашу вещь, сохранить и продать по вашей цене!
-                
+        section.products__list
+            .container
+                .title__wrapper
+                    h2.title Последние поступления
+                    .owl__nav
+                .slider__wrapper.owl-carousel
+                    +ProductItem('assets/images/products/ax_0024 (2)-950x950.jpg', 'Женское платье', 'Roland Mouret', '13 000', '42(ru)')
+                    +ProductItem('assets/images/products/first-lady-norka-shuba_7331279_xl.jpg', 'Шуба', 'FIRST LADY', '51 000', '42(ru)')
+                    +ProductItem('assets/images/products/I_xNrEWV5Nw.jpg', 'Летняя одежда', 'Polo Gucci', '12 000', '42(ru)')
+                    +ProductItem('assets/images/products/ah_0025 (2)-950x950.jpg', 'Женское платье', 'Roland Mouret', '13 000', '42(ru)')
+                            
 
         include pug/scripts.pug
