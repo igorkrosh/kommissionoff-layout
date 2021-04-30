@@ -2,8 +2,19 @@ $(document).ready(Core);
 
 function Core()
 {
+    InitOwl();
     SetTabSwitcher();
     SetModal();
+}
+
+function InitOwl()
+{
+    $('section.main .owl-carousel').owlCarousel({
+        items: 1,
+        navContainer: $('section.main .slider__wrapper .owl__nav'),
+        nav: true,
+        dots: false,
+    })
 }
 
 function SetTabSwitcher()

@@ -10,5 +10,31 @@ html(lang="ru")
         include pug/head.pug
     body
         +Navbar()
+        section.main
+            .container
+                .catalog
+                    a(href="") Одежда мужская и женская
+                    a(href="") Верхняя одежда
+                    a(href="") Повседневная одежда
+                    a(href="") Платья
+                    a(href="") Рубашки
+                    a(href="") Костюмы
+                    a(href="") Обувь
+                    a(href="") Зимняя
+                    a(href="") Демисезонная
+                    a(href="") Летняя
+                    a(href="") Спортивная
+                .slider__wrapper
+                    .owl-carousel
+                        .slider__item
+                            img(src="assets/images/slider/1.jpg", alt="")
+                            a(href="").btn.purple.large Перейти в каталог
+                        .slider__item
+                            img(src="assets/images/slider/1.jpg", alt="")
+                    .owl__nav
+            .container
+                .border__orange
+                    p Если Вы хотите продать дорогую вещь, но не хотите созваниваться с незнакомыми людьми и если Вы не хотите чтобы незнакомые люди ходили в Ваш дом Мы готовы принять Вашу вещь, сохранить и продать по вашей цене!
+                
 
         include pug/scripts.pug
