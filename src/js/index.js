@@ -18,9 +18,18 @@ function InitOwl()
         loop: true,
     });
 
-    $('section.products__list .owl-carousel').owlCarousel({
+    $('section.products__list.last .owl-carousel').owlCarousel({
         items: 4,
-        navContainer: $('section.products__list .owl__nav'),
+        navContainer: $('section.products__list.last .owl__nav'),
+        nav: true,
+        dots: false,
+        autoplay: true,
+        loop: true,
+    })
+
+    $('section.products__list.sale .owl-carousel').owlCarousel({
+        items: 4,
+        navContainer: $('section.products__list.sale .owl__nav'),
         nav: true,
         dots: false,
         autoplay: true,
