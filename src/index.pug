@@ -80,6 +80,43 @@ html(lang="ru")
                     +ProductItem('assets/images/products/ah_0025 (2)-950x950.jpg', 'Женское платье', 'Roland Mouret', '13 000', '42(ru)')
                 .btn__wrapper
                     a(href="").btn.border Весь каталог
+        section.info
+            .container
+                .border__orange
+                    span.info__title Сколько стоит моя вещь?
+                    span.info__desc 
+                        |Стоимость товара зависит от его актуальности, внешнего
+                        |состояния. Точная оценка происходит непосредственно
+                        |в нашем магазине.
+                    .btn__wrapper   
+                        button.btn.purple Подробнее
+                .border__orange
+                    span.info__title О магазине
+                    span.info__desc 
+                        |Доверьтесь нашему опыту и оцените преимущества
+                        |надёжного сотрудничества!
+                    .btn__wrapper   
+                        button.btn.purple Подробнее
+        section.contacts__info
+            .ymap
+                +Ymap()
+            .container
+                .info__wrapper
+                    h1.info__title Магазин «Комиссионофф»
+                    .contacts__wrapper
+                        span.contact__title Телефон
+                        a(href="").contact +7 (123) 456-78-90
+                        a(href="").contact +7 (123) 456-78-90
+                    .contacts__wrapper
+                        span.contact__title Адрес
+                        span.contact 163051 г. Архангельск, 
+                        span.contact ул. Воскресенская, д. 114
+                    .contacts__wrapper
+                        span.contact__title Почта
+                        a(href="").contact mail@mail.com
+                    .contacts__wrapper
+                        span.contact__title Режим работы    
+                        span.contact 8:00 - 21:00
 
 
         include pug/scripts.pug

@@ -38,20 +38,20 @@ section
     padding: 40px 0;
 }
 
+.navbar
+{
+    background-color: #fff;
+    padding: 25px 0;
+
+    .container 
+    {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
 header
 {
-    .navbar
-    {
-        background-color: #fff;
-        padding: 25px 0;
-    
-        .container 
-        {
-            display: flex;
-            justify-content: space-between;
-        }
-    }
-
     .menu__wrapper
     {
         background: rgb(86,12,198);
@@ -312,8 +312,9 @@ section.main
     background-color: #6713e5;
     color: #fff;
     text-transform: uppercase;
-    font-weight: 600;
-
+    font-weight: 700;
+    border: none;
+    font-size: 16px;
 }
 
 .btn:hover
@@ -519,6 +520,120 @@ section.banner
                 left: 0;
                 object-fit: cover;
             }
+        }
+    }
+}
+
+section.info
+{
+    .container
+    {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .border__orange
+        {
+            width: 48%;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+
+            .info__title
+            {
+                font-size: 22px;
+                font-weight: 700;
+                margin-bottom: 15px;
+            }
+
+            .info__desc
+            {
+                margin-bottom: 15px;
+            }
+
+            .btn__wrapper
+            {
+                margin-top: auto;
+            }
+        }
+    }
+}
+
+section.contacts__info
+{
+    min-height: 450px;
+    display: flex;
+    position: relative;
+    padding: 0;
+    overflow: hidden;
+
+    .ymap
+    {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+
+        .ymaps-2-1-78-controls__control
+        {
+            position: absolute!important;
+            right: 10px!important;
+            left: initial!important
+        }
+    }
+
+    .container
+    {
+        position: relative;
+        z-index: 10;
+    }
+
+    .container:after
+    {
+        content: '';
+        position: absolute;
+        left: -75vw;
+        top: 0;
+        width: 100vw;
+        height: 100%;
+        background: #F8790E;
+        z-index: -1;
+    }
+
+    .info__wrapper
+    {
+        width: 450px;
+        padding: 70px 0;
+        color: #fff;
+
+        .info__title
+        {
+            margin: 0;
+        }
+
+        .contacts__wrapper
+        {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin: 30px 0;
+
+            .contact__title
+            {
+                font-size: 12px;
+                margin-bottom: 10px;
+            }
+
+            .contact
+            {
+                font-size: 17px;
+            }
+        }
+
+        .contacts__wrapper:last-of-type
+        {
+            margin-bottom: 0;
         }
     }
 }
