@@ -638,6 +638,52 @@ section.contacts__info
     }
 }
 
+footer
+{
+    padding-bottom: 20px;
+
+    .footer__info
+    {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: center;
+
+        .copyright
+        {
+            width: 250px;
+            font-size: 11px;
+        }
+
+        .policy__wrapper
+        {
+            width: 200px;
+            font-size: 11px;
+
+            .policy
+            {
+                font-weight: 700;
+                margin-bottom: 5px;
+                display: block;
+            }
+
+            .salut
+            {
+                a
+                {
+                    color: #6713e5;
+                    transition: 0.5s;
+                }
+
+                a:hover
+                {
+                    color: #ff0000
+                }
+            }
+        }
+    }
+}
+
 .title
 {
     font-size: 32px;

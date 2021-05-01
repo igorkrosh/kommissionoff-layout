@@ -52,3 +52,25 @@ mixin Navbar()
                             button 
 mixin Ymap()
     <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Adbd6c1f91f6f5e702b59510a42380c63d6bd07896e10a9d591c5e001264d63da&amp;width=100%25&amp;height=100%&amp;lang=ru_RU&amp;scroll=false"></script>
+
+mixin Footer()
+    footer
+        .navbar
+            .container
+                a(href="/").logo
+                    img(src="assets/images/logo.png", alt="") 
+                .contacts__wrapper
+                    .contacts.address
+                        span г. Архангельск, <br> ул. Воскресенская, д. 114
+                    .contacts.phone 
+                        a(href="") +7 (123) 456-78-90
+                    .contacts.mail
+                        a(href="") mail@mail.ru 
+        .container.footer__info
+            .copyright
+                span Copyrigth 2021 - все права защищены. Копирование информации без указания источника преследуется законом
+            .policy__wrapper
+                a(href="").policy Политика конфиденциальности
+                .salut 
+                    span Разработка сайта - 
+                    a(href="") SalutPromo
