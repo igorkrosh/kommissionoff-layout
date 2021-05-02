@@ -1,0 +1,122 @@
+include pug/mixins.pug
+
+doctype html
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+        include pug/head.pug
+    body
+        +Navbar()
+        section.catalog__section
+            .container
+                .catalog
+                    .item
+                        .sub__menu
+                            .wrapper
+                                .item 
+                                    .sub__menu
+                                        .wrapper
+                                            .item.active
+                                                a(href="") Демисезонная
+                                            .item 
+                                                a(href="") Летняя
+                                            .item
+                                                a(href="") Зимняя 
+                                    a(href="") Верхняя одежда
+                                .item 
+                                    .sub__menu
+                                        .wrapper
+                                            .item 
+                                                a(href="") Демисезонная
+                                            .item 
+                                                a(href="") Летняя
+                                            .item 
+                                                a(href="") Зимняя
+                                    a(href="") Повседневная одежда
+                                .item 
+                                    a(href="") Рубашки
+                                .item 
+                                    a(href="") Костюмы
+                                .item 
+                                    a(href="") Платья
+                                .item 
+                                    .sub__menu
+                                        .wrapper
+                                            .item 
+                                                a(href="") Демисезонная
+                                            .item 
+                                                a(href="") Летняя
+                                            .item 
+                                                a(href="") Зимняя
+                                    a(href="") Обувь 
+                                .item 
+                                    a(href="") Спортивная
+                                .item 
+                                    a(href="") Аксессуары 
+                        a(href="") Одежда женская 
+                    .item 
+                        .sub__menu
+                            .wrapper
+                                .item
+                                    .sub__menu
+                                        .wrapper
+                                            .item
+                                                a(href="") Демисезонная
+                                            .item
+                                                a(href="") Летняя
+                                            .item
+                                                a(href="") Зимняя 
+                                    a(href="") Верхняя одежда 
+                                .item
+                                    .sub__menu
+                                        .wrapper
+                                            .item
+                                                a(href="") Демисезонная
+                                            .item
+                                                a(href="") Летняя
+                                            .item
+                                                a(href="") Зимняя 
+                                    a(href="") Повседневная одежда 
+                                .item
+                                    a(href="") Рубашки
+                                .item
+                                    a(href="") Костюмы
+                                .item
+                                    .sub__menu
+                                        .wrapper
+                                            .item
+                                                a(href="") Демисезонная
+                                            .item
+                                                a(href="") Летняя
+                                            .item 
+                                                a(href="") Зимняя 
+                                    a(href="") Обувь 
+                                .item 
+                                    a(href="") Спортивная
+                                .item 
+                                    a(href="") Аксессуары 
+                        a(href="") Одежда мужская
+                .content
+                    ul.breadscrumbs
+                        li
+                            a(href="") Главная
+                        span -
+                        li.active
+                            a(href="") Одежда женская
+                    h1.title Одежда женская
+                        
+                    .products__list
+                        +ProductItem('assets/images/products/ax_0024 (2)-950x950.jpg', 'Женское платье', 'Roland Mouret', '13 000', '42(ru)')
+                        +ProductItem('assets/images/products/first-lady-norka-shuba_7331279_xl.jpg', 'Шуба', 'FIRST LADY', '51 000', '42(ru)')
+                        +ProductItem('assets/images/products/I_xNrEWV5Nw.jpg', 'Летняя одежда', 'Polo Gucci', '12 000', '42(ru)')
+                        +ProductItem('assets/images/products/ah_0025 (2)-950x950.jpg', 'Женское платье', 'Roland Mouret', '13 000', '42(ru)')
+        +BestSales()
+        +InfoSection()
+        +ContactsInfo()
+        +Footer()
+
+
+        include pug/scripts.pug

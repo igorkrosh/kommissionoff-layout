@@ -3,8 +3,10 @@ $(document).ready(Core);
 function Core()
 {
     InitOwl();
+
     SetTabSwitcher();
     SetModal();
+    SetCatalogMenu();
 }
 
 function InitOwl()
@@ -126,4 +128,29 @@ function HideModal(modalId)
         $(modalId + ' .modal__dialog').removeClass('fadeOutDownBig');
         $('.modal__backdrop').remove();
     });
+}
+
+function SetCatalogMenu()
+{
+    $('.catalog .item').on('click', function(e) {
+        e.stopPropagation();
+
+        $(this).parent().find('.sub__menu.active').removeClass('active')
+
+        let subMenu = $(this).find('.sub__menu')[0];
+
+        if ($(subMenu).hasClass('active'))
+        {
+            $(subMenu).removeClass('active');
+        }
+        else
+        {
+            $(subMenu).addClass('active');
+        }
+    })
+
+    let activeMenu = $('.catalog .item.active').find('.sub__menu')[0]
+
+    $(activeMenu).addClass('active')
+    $('.catalog .item.active').parents('.sub__menu').addClass('active')
 }

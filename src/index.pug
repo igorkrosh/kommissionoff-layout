@@ -1,17 +1,5 @@
 include pug/mixins.pug
 
-mixin ProductItem(img, type, brand, price, size)
-    a(href="").slider__item
-        .preview
-            img(src=img, alt="")
-        .desc
-            .type=type
-            .brand=brand
-            .price=price
-                | р.
-            .size Размер: 
-                =size
-
 doctype html
 html(lang="ru")
     head
@@ -25,17 +13,28 @@ html(lang="ru")
         section.main
             .container
                 .catalog
-                    a(href="") Одежда мужская и женская
-                    a(href="") Верхняя одежда
-                    a(href="") Повседневная одежда
-                    a(href="") Платья
-                    a(href="") Рубашки
-                    a(href="") Костюмы
-                    a(href="") Обувь
-                    a(href="") Зимняя
-                    a(href="") Демисезонная
-                    a(href="") Летняя
-                    a(href="") Спортивная
+                    .item
+                        a(href="") Одежда мужская и женская
+                    .item
+                        a(href="") Верхняя одежда
+                    .item
+                        a(href="") Повседневная одежда
+                    .item
+                        a(href="") Платья
+                    .item
+                        a(href="") Рубашки
+                    .item
+                        a(href="") Костюмы
+                    .item
+                        a(href="") Обувь
+                    .item
+                        a(href="") Зимняя
+                    .item
+                        a(href="") Демисезонная
+                    .item
+                        a(href="") Летняя
+                    .item
+                        a(href="") Спортивная
                 .slider__wrapper
                     .owl-carousel
                         .slider__item
@@ -68,55 +67,9 @@ html(lang="ru")
                     img.bg(src="assets/images/banners/938-9385918_strip-full-shirt-.jpg", alt="")
                     span Мужская и женская одежда
                     button.btn.white Увидеть
-        section.products__list.sale
-            .container
-                .title__wrapper
-                    h2.title Выгодные предложения
-                    .owl__nav
-                .slider__wrapper.owl-carousel
-                    +ProductItem('assets/images/products/ax_0024 (2)-950x950.jpg', 'Женское платье', 'Roland Mouret', '13 000', '42(ru)')
-                    +ProductItem('assets/images/products/first-lady-norka-shuba_7331279_xl.jpg', 'Шуба', 'FIRST LADY', '51 000', '42(ru)')
-                    +ProductItem('assets/images/products/I_xNrEWV5Nw.jpg', 'Летняя одежда', 'Polo Gucci', '12 000', '42(ru)')
-                    +ProductItem('assets/images/products/ah_0025 (2)-950x950.jpg', 'Женское платье', 'Roland Mouret', '13 000', '42(ru)')
-                .btn__wrapper
-                    a(href="").btn.border Весь каталог
-        section.info
-            .container
-                .border__orange
-                    span.info__title Сколько стоит моя вещь?
-                    span.info__desc 
-                        |Стоимость товара зависит от его актуальности, внешнего
-                        |состояния. Точная оценка происходит непосредственно
-                        |в нашем магазине.
-                    .btn__wrapper   
-                        button.btn.purple Подробнее
-                .border__orange
-                    span.info__title О магазине
-                    span.info__desc 
-                        |Доверьтесь нашему опыту и оцените преимущества
-                        |надёжного сотрудничества!
-                    .btn__wrapper   
-                        button.btn.purple Подробнее
-        section.contacts__info
-            .ymap
-                +Ymap()
-            .container
-                .info__wrapper
-                    h1.info__title Магазин «Комиссионофф»
-                    .contacts__wrapper
-                        span.contact__title Телефон
-                        a(href="").contact +7 (123) 456-78-90
-                        a(href="").contact +7 (123) 456-78-90
-                    .contacts__wrapper
-                        span.contact__title Адрес
-                        span.contact 163051 г. Архангельск, 
-                        span.contact ул. Воскресенская, д. 114
-                    .contacts__wrapper
-                        span.contact__title Почта
-                        a(href="").contact mail@mail.com
-                    .contacts__wrapper
-                        span.contact__title Режим работы    
-                        span.contact 8:00 - 21:00
+        +BestSales()
+        +InfoSection()
+        +ContactsInfo()
         +Footer()
 
 
