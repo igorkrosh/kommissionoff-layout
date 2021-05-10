@@ -24,9 +24,10 @@
         transform: translateY(-50%);
         height: 16px;
         width: 16px;
-        background-color: #eee;
-        border-radius: 50%;
+        background-color: #fff;
+        border-radius: 0;
         transition: 0.3s;
+        border: 1px solid #dddddd;
     }
 
     .checkmark:after 
@@ -45,8 +46,8 @@
         transform: translate(-50%, -50%);
         width: 7px;
         height: 7px;
-        border-radius: 50%;
-        background: #f37153;
+        border-radius: 0;
+        background: #6116d1;
     }
 }
 

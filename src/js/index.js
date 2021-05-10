@@ -2,7 +2,9 @@ $(document).ready(Core);
 
 function Core()
 {
+    InitSimpleLightbox();
     InitOwl();
+    InitNoUiSlider();
 
     SetTabSwitcher();
     SetModal();
@@ -37,6 +39,66 @@ function InitOwl()
         autoplay: true,
         loop: true,
     })
+
+    let productPreviewSlider = $('section.catalog__section .images__wrapper');
+    let productImagesSlider = $('section.catalog__section .images__slider');
+
+    productPreviewSlider.owlCarousel({
+        items: 1,
+        nav: false,
+        dots: false,
+
+    }).on('changed.owl.carousel', syncPosition);
+
+    productImagesSlider.on('initialized.owl.carousel', function() {
+        productImagesSlider.find(".owl-item").eq(0).addClass("current");
+    }).owlCarousel({
+        items: 4,
+        nav: false,
+        dots: false,
+    }).on('changed.owl.carousel', syncPosition2);
+
+    function syncPosition(el) {
+        var count = el.item.count - 1;
+        var current = Math.round(el.item.index - (el.item.count / 2) - .5);
+
+        if (current < 0) {
+            current = count;
+        }
+        if (current > count) {
+            current = 0;
+        }
+
+        productImagesSlider
+            .find(".owl-item")
+            .removeClass("current")
+            .eq(current)
+            .addClass("current");
+        var onscreen = productImagesSlider.find('.owl-item.active').length - 1;
+        var start = productImagesSlider.find('.owl-item.active').first().index();
+        var end = productImagesSlider.find('.owl-item.active').last().index();
+
+        if (current > end) {
+            productImagesSlider.data('owl.carousel').to(current, 100, true);
+        }
+        if (current < start) {
+            productImagesSlider.data('owl.carousel').to(current - onscreen, 100, true);
+        }
+    }
+
+    function syncPosition2(el) {
+        if (syncedSecondary) {
+            var number = el.item.index;
+            productPreviewSlider.data('owl.carousel').to(number, 100, true);
+        }
+    }
+
+    productImagesSlider.on("click", ".owl-item", function(e) {
+        e.preventDefault();
+        var number = $(this).index();
+        productPreviewSlider.data('owl.carousel').to(number, 300, true);
+    });
+
 }
 
 function SetTabSwitcher()
@@ -154,3 +216,51 @@ function SetCatalogMenu()
     $(activeMenu).addClass('active')
     $('.catalog .item.active').parents('.sub__menu').addClass('active')
 }
+
+function InitNoUiSlider()
+{
+    if (document.getElementById('nouislider') == null)
+    {
+        return;
+    }
+
+    let filterSettigns = JSON.parse(document.getElementById('filterSettigns').textContent);
+    console.log(filterSettigns.priceTo);
+    let htmlSlider = document.getElementById('nouislider');
+
+    noUiSlider.create(htmlSlider, {
+        start: [filterSettigns.priceFrom, filterSettigns.priceTo],
+        connect: true,
+        range: {
+            'min': filterSettigns.priceFrom,
+            'max': filterSettigns.priceTo
+        }
+    });
+
+    let inputTo = document.querySelector('input[name="filter-to"]');
+    let inputFrom = document.querySelector('input[name="filter-from"]');
+
+    htmlSlider.noUiSlider.on('update', function (values, handle) {
+        var value = values[handle];
+    
+        if (handle) {
+            inputTo.value = parseInt(value);
+        } else {
+            inputFrom.value = parseInt(value);
+        }
+    });
+
+    inputTo.addEventListener('change', function () {
+        htmlSlider.noUiSlider.set([null, parseInt(this.value)]);
+    });
+
+    inputFrom.addEventListener('change', function () {
+        htmlSlider.noUiSlider.set([parseInt(this.value), null]);
+    });
+}
+
+function InitSimpleLightbox()
+{
+    $('.product__info a.preview').simpleLightbox();
+}
+

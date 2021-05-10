@@ -100,21 +100,6 @@ html(lang="ru")
                                     .item 
                                         a(href="") Аксессуары 
                             a(href="") Одежда мужская
-                    .filter
-                        div#nouislider
-                        .nouislider__controls
-                            .control.from
-                                span Цена от
-                                input(type="text" name="filter-from")
-                            .separator
-                                span -
-                            .control.to
-                                span Цена до
-                                input(type="text" name="filter-to")
-                        .condition
-                            b Состояние
-                            +InputRadio('condition', 'Новое', 'new')
-                            +InputRadio('condition', 'Б/у', 'old')
                 .content
                     ul.breadscrumbs
                         li
@@ -122,23 +107,58 @@ html(lang="ru")
                         span -
                         li.active
                             a(href="") Одежда женская
-                    h1.title Одежда женская
-                        
-                    .products__list
-                        +ProductItem('assets/images/products/ax_0024 (2)-950x950.jpg', 'Женское платье', 'Roland Mouret', '13 000', '42(ru)')
-                        +ProductItem('assets/images/products/first-lady-norka-shuba_7331279_xl.jpg', 'Шуба', 'FIRST LADY', '51 000', '42(ru)')
-                        +ProductItem('assets/images/products/I_xNrEWV5Nw.jpg', 'Летняя одежда', 'Polo Gucci', '12 000', '42(ru)')
-                        +ProductItem('assets/images/products/ah_0025 (2)-950x950.jpg', 'Женское платье', 'Roland Mouret', '13 000', '42(ru)')
+                    .product__info
+                        .images__col
+                            .images__wrapper.owl-carousel
+                                a(href="assets/images/products/ax_0024 (2)-950x950_big.jpg").preview
+                                    img(src="assets/images/products/ax_0024 (2)-950x950_big.jpg", alt="")
+                                a(href="assets/images/products/first-lady-norka-shuba_7331279_xl.jpg").preview
+                                    img(src="assets/images/products/first-lady-norka-shuba_7331279_xl.jpg", alt="")
+                                a(href="assets/images/products/I_xNrEWV5Nw.jpg").preview
+                                    img(src="assets/images/products/I_xNrEWV5Nw.jpg", alt="")
+                                a(href="assets/images/products/ah_0025 (2)-950x950.jpg").preview
+                                    img(src="assets/images/products/ah_0025 (2)-950x950.jpg", alt="")
+                            .images__slider.owl-carousel
+                                .slide
+                                    img(src="assets/images/products/ax_0024 (2)-950x950_big.jpg", alt="")
+                                .slide
+                                    img(src="assets/images/products/first-lady-norka-shuba_7331279_xl.jpg", alt="")
+                                .slide
+                                    img(src="assets/images/products/I_xNrEWV5Nw.jpg", alt="")
+                                .slide
+                                    img(src="assets/images/products/ah_0025 (2)-950x950.jpg", alt="")
+                        .desc__col
+                            h1 Женское платье Roland Mouret
+                            .desc__row.price
+                                b 
+                                    |Стоимость:
+                                    .old_price
+                                        |27000 р.
+                                .value
+                                    |13000 р.
+                            .desc__row
+                                b Размер:
+                                .value
+                                    |42 (ru)
+                            .desc__row
+                                b Описание:
+                                .value
+                                    |Женское платье Roland Mouret с зелёными, белыми и черными вставками. 
+                            .desc__row
+                                b Материал:
+                                .value
+                                    |Хлопок
+                            .desc__row
+                                b Товар в магазине:
+                                .value
+                                    |г. Архангельск, ул. Воскресенская, д. 114
+                                   
+
+
         +BestSales()
         +InfoSection()
         +ContactsInfo()
         +Footer()
-
-        script(type="application/json")#filterSettigns
-            |{
-            |    "priceFrom": 4000,
-            |    "priceTo": 850000
-            |}
 
 
         include pug/scripts.pug
